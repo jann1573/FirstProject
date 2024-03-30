@@ -1,6 +1,6 @@
 public class MultiplyExample {
    public static void main(String[] args) {
-       double a;
+       int a;
        int b;
        int c;
        a = 5;
