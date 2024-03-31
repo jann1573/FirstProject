@@ -1,0 +1,90 @@
+<html>
+        <body>
+            <div class="container-fluid">
+                <header>
+                    <h1>Business Registration Address Setup</h1>
+                </header>
+
+         <form>
+                <label>number 1</label>
+                <input type="text" name="number1" id="number1" placeholder="enter single digit number"> <br>
+                +<br>
+                <label>number 2</label>
+                <input type="text" name="number2" id="number2" placeholder="enter single digit number"><br>
+                <button type="submit" class="btn btn-info" onclick="submit1()">submit</button><br><br>
+                <div class="screen" id="screen1"></div>
+
+            </form>
+
+            </div> <!-- End Container-->
+
+
+
+        <footer>
+
+        </footer>
+          <script type="text/javascript">
+              function submit1(){
+                 var a = document.getElementByID("number1").value;
+              var b = document.getElementByID("number2").value;
+                var c = a + b; 
+            document.getElementByID("screen1").innerHTML=c;
+              }
+          </script>
+
+        </body>
+        </html>
+javascripthtml
+Share
+Improve this question
+Follow
+asked Jun 15, 2016 at 7:02
+Priyanka Maurya's user avatar
+Priyanka Maurya
+42333 gold badges77 silver badges1818 bronze badges
+As @Mairaj Ahmad mentioned, just change type='button' from type='submit – 
+Hardik Pithva
+ Jun 15, 2016 at 7:07
+Mistakes are 1. type="button" 2. documentgetElementById 3. parse the integer. Working url: codepen.io/SESN/pen/xOOGZG – 
+SESN
+ Jun 15, 2016 at 7:10
+Add a comment
+2 Answers
+Sorted by:
+
+Highest score (default)
+2
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div class="container-fluid">
+    <header>
+        <h1>Business Registration Address Setup</h1>
+    </header>
+
+    <label>number 1</label>
+    <input type="text" name="number1" id="number1" placeholder="enter single digit number"> <br>
+    +<br>
+    <label>number 2</label>
+    <input type="text" name="number2" id="number2" placeholder="enter single digit number"><br>
+    <button type="button" class="btn btn-info" onclick="submit1()">submit</button><br><br>
+    <div class="screen" id="screen1"></div>
+
+
+</div> <!-- End Container-->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$( document ).ready(function() {
+
+});
+function submit1(){
+    var a =  document.getElementById("number1").value;
+    var b =  document.getElementById("number2").value;
+    var c = parseInt(a) + parseInt(b); 
+    document.getElementById("screen1").innerHTML=c;
+  }
+</script>
